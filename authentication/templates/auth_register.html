@@ -2,11 +2,30 @@
 <html>
     <head>
         <title>Register Page</title>
+        <style>
+
+            .heading{
+                text-align: center;
+            }
+
+        </style>
     </head>
 
-    <body>
+    <body class="heading">
        <h1>This is Register Page</h1>
         
+       <form action="{% url 'auth_register' %}" method="post">
+             {% csrf_token %}
+            <input type="text" name="fname" placeholder="Enter FName"><br><br>
+            <input type="text" name="lname" placeholder="Enter LName"><br><br>
+            <input type="email" name="email" placeholder="Enter Email"><br><br>
+            <input type="text" name="mobile" placeholder="Enter Mobile"><br><br>
+            <input type="password" name="password" placeholder="Enter Password"><br><br>
+            <button type="submit" name="submit">Register</button><br><br>
+            <button type="reset">Clear</button>
+
+       </form>
+
        
     </body>
 </html>

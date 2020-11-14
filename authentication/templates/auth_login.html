@@ -2,12 +2,27 @@
 <html>
     <head>
         <title>Login Page</title>
+        <style>
+
+            .heading{
+                text-align: center;
+            }
+
+        </style>
     </head>
 
     <body>
        
-        <h1>This is Login Page</h1>
+        <h1 class="heading">This is Login Page</h1>
 
+        <form action="login" method="POST" class="heading">
+            {% csrf_token %}
+            <input type="text" name="username" placeholder="Email"><br><br>
+            <input type="password" name="password" placeholder="Password"><br><br>
+            <button type="submit">Login</button><br><br> 
+            <button type="reset">Clear</button>
+
+        </form>
         
     </body>
 </html>
